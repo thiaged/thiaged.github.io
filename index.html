@@ -10,9 +10,19 @@
 <body style="background-image: url('portal.png'); width: 100%; height: 100%; background-size: cover; background-repeat: no-repeat; ">
 	<script type="text/javascript" src="urlize.js"></script>
 	<script type="text/javascript">
+		function makeid(length) {
+		   var result           = '';
+		   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+		   var charactersLength = characters.length;
+		   for ( var i = 0; i < length; i++ ) {
+		      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+		   }
+		   return result;
+		}
+
 		var botBaseUrl = "https://api.api.ai/v1/";
 		var botAccessToken = "85c4ce39f9254f01b1350b7a601a61cb";
-		var botSessId = "<?=uniqid('', true)?>";
+		var botSessId = makeid(9);
 		var iniciado = false;
 		$(document).ready(function() {
 			
